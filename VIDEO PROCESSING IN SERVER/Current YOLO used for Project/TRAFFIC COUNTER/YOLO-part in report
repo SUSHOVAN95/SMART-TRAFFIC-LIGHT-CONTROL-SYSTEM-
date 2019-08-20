@@ -1,0 +1,28 @@
+You only Look Once (YOLO)
+
+For YOLO, detection is a straightforward regression dilemma which takes an input image and learns the class possibilities with bounding box coordinates. YOLO divides every image into a grid of S x S and every grid predicts N bounding boxes and confidence. The confidence reflects the precision of the bounding box and whether the bounding box in point of fact contains an object in spite of the defined class. YOLO even forecasts the classification score for every box for each class. You can merge both the classes to work out the chance of every class being in attendance in a predicted box.
+
+So, total SxSxN boxes are forecasted. On the other hand, most of these boxes have lower confidence scores and if we set a doorstep say 30% confidence, we can get rid of most of them.
+
+Single Shot Detector (SSD)
+
+SSD attains a better balance between swiftness and precision. SSD runs a convolutional network on input image only one time and computes a feature map. Now, we run a small 3×3 sized convolutional kernel on this feature map to foresee the bounding boxes and categorization probability.
+
+SSD also uses anchor boxes at a variety of aspect ratio comparable to Faster-RCNN and learns the off-set to a certain extent than learning the box. In order to hold the scale, SSD predicts bounding boxes after multiple convolutional layers. Since every convolutional layer functions at a diverse scale, it is able to detect objects of a mixture of scales.
+
+
+YOLO Vs SSD
+
+1. SSD is a healthier recommendation. However, if exactness is not too much of disquiet but you want to go super quick, YOLO will be the best way to move forward. First of all, a visual thoughtfulness of swiftness vs precision trade-off would differentiate them well.
+
+SSD is a better option as we are able to run it on a video and the exactness trade-off is very modest. While dealing with large sizes, SSD seems to perform well, but when we look at the accurateness numbers when the object size is small, the performance dips a bit.
+
+2. The trade-off between speed and accuracy is accompanied with computational power available. The YOLO model is suitable for high-speed outputs, where accuracy is not that high… whereas SSDs provide higher accuracies with high-speed outputs with a higher computation time.
+
+Hence choose SSDs on good microprocessors, else YOLO is the goto for microprocessor-based computations.
+
+SSDs: IOU= 0.74, mAP: 0.83 Time /epoch: 12 minutes
+YOLOs: IOU= 0.69, mAP: 0.85 Time/epoch: 11 minutes
+
+
+
